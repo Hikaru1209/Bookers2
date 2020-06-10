@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+    padding-top: 70px;
+}
+
+input[type="text"] {
+	width:100%;
+}
+
+textarea {
+	width:100%;
+}
+
+.error_explanation {
+	color:red;
+}
+
+.navbar-inverse .navbar-text {
+    color:white;
+    margin:0;
+    font-size:20px;
+}

@@ -1,7 +1,12 @@
 <%= render partial:"layouts/error_messages", locals: {book: @book} %>
+    <div class="row">
+    	<div class="col-xs-3">
+			<%= render partial:"users/user_profile", locals: {user: @user} %>
 
-<%= render partial:"users/user_profile", locals: {user: @user} %>
+			<%= render partial:"new" %>
+		</div>
 
-<%= render partial:"new" %>
-
-<%= render partial:"booklists",locals: {books: @books} %>
+        <div class="col-xs-9">
+			<%= render partial:"booklists",locals: {books: @books} %>
+		</div>
+	</div>

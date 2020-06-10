@@ -1,5 +1,13 @@
-    <%= render partial:"user_profile", locals: {user: @user} %>
 
-    <%= render partial:"books/new" %>
+    <div class="row">
+    	<div class="col-xs-3">
+          <%= render partial:"user_profile", locals: {user: @user} %>
 
-    <%= render partial:"books/booklists" ,locals: {books: @books} %>
+          <%= render partial:"books/new" %>
+        </div>
+    
+
+        <div class="col-xs-9">
+           <%= render partial:"books/booklists" ,locals: {books: @books} %>
+        </div>
+    </div>

@@ -1,10 +1,33 @@
 <h2>User info</h2>
-    <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg"%>
-    <p>name <%= user.name %></p>
-    <p>introduction <%= user.introduction %></p>
+    <p><%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg"%></p>
+
+    <table class="table">
+    	<tbody>
+		    <tr>
+		    	<td><b>name</b></td>
+		    	<td><b><%= user.name %></b></td>
+		    </tr>
+		    <tr>
+		    	<td><b>introduction</b></td>
+		    	<td><b><%= user.introduction %></b></td>
+		    </tr>
+        </tbody>
+    </table>
 
     <% if user.id == current_user.id %>
-        <p><%= link_to "ボタン", edit_user_path(user) %></p>
+        <p>
+            <%= link_to edit_user_path(user) do %>
+            <button type="button" class="btn btn-default btn-block">
+                <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+            </button>
+            <% end %>
+        </p>
     <% else %>
-        <p><%= link_to "自分に戻るボタン", user_path(current_user.id) %></p>
+        <p>
+            <%= link_to user_path(current_user.id) do %>
+            <button type="button" class="btn btn-default btn-block" >
+                 <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+            </button>
+            <% end %>
+        </p>
     <% end %>
